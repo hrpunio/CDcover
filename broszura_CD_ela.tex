@@ -1,0 +1,520 @@
+%& -translate-file=il2-pl
+%
+% Plik do sk³adanie ok³adki CD sk³adanej `na dwa razy' (6Pdigipack)
+%
+\input pdf-trans.tex
+%
+\def\BaseSize{8.2pt} %% 8.7
+\def\BaseCSize{8.33pt} %% 8.7
+\font\rm=qx-iwonar at \BaseSize
+\font\sc=qx-iwonar-sc at \BaseSize
+\font\it=qx-iwonari at \BaseSize
+\font\bf=qx-iwonab at \BaseSize
+\baselineskip 9.4pt %% 10.65
+\parindent12pt
+\rm
+\font\crm=qx-iwonacr at \BaseCSize
+\font\crms=qx-iwonacr at 8.0pt
+\font\csc=qx-iwonacr-sc at \BaseCSize
+\font\cit=qx-iwonacri at \BaseCSize
+\font\smallrm = qx-iwonacr at 7.9pt
+\font\xsmallrm = qx-iwonacr at 7.4pt
+\font\ysmallrm = qx-iwonacl at 7.0pt
+%\font\cbf=qx-iwonaclb at \BaseSize
+\nopagenumbers
+
+%% Domy¶lna d³ugo¶æ/szeroko¶æ ok³adki
+\newdimen\CDwidth \CDwidth=139mm
+\newdimen\CDheight \CDheight=125mm
+
+%% Wymiary kolumny tekstu:
+\hsize133mm
+\vsize=115mm
+
+\newdimen \pdfimagewidth
+\def\fig#1{\pdfximage width\pdfimagewidth {#1}\pdfrefximage\pdflastximage}
+
+\def\who#1{{\bf #1}}
+\def\textit#1{{\it #1}}
+%% %%%
+\def\ostyle#1{{\sc #1}}
+\def\creator#1{\par\smallskip {\sc #1} \par}
+\def\movement#1#2#3{ \ostyle{#1}. #2 \hbox to1.5cm{\dotfill}\ostyle{#3}\par }
+\def\composition#1#2{ #1 #2 \par }
+\def\compositionNoParts#1#2#3#4{\ostyle{#1}. #2 #3 \ostyle{#4}\par }
+\def\performer#1{#1}
+\def\heading#1{{\bf #1}\par}
+\def\subheading#1{{\bf #1}}
+\def\|{\kern1.5pt\relax}
+%% %%%
+\def\condensed{\def\sc{\csc}\def\rm{\crm}\def\it{\cit}\def\bf{\crm}\rm \baselineskip 9.55pt}
+%%
+%% Strona zewnêtrzna nr 1 %%
+\font\titlefont=qx-iwonah at 24pt
+\font\subtitlefont=qx-iwonar at 10pt
+\pdfimagewidth=124mm
+\def\Line#1{\hbox to\pdfimagewidth{#1}}%%
+%%%
+\long\def\DefCoverPage#1#2{\setbox#1 \vbox to \vsize{#2}}
+\def\DefGrzbiet#1{\setbox9\hbox{#1}}
+%%
+%% Uk³ad stron jest nastêpuj±cy: 
+%%         | 6 | 3 | 5 |
+%%         +---+---+---+
+%%         | 4 | 2 | 1 |
+%%  strony 6/3/5 s± odwrócone o 180stopni
+%%  pomiêdzy 4/2 oraz 2/1 wstawiane s± napisy drukowane na grzbiecie.
+%%
+%% %% %% %%% %%% %%% %%% %% %% %% %%% %% %% %% %% %%% %%% %%% %%% %%%
+%% *** Strona tytu³owa:
+\DefCoverPage{1}{%%
+\kern1.5mm
+\begingroup
+ %%%
+\begingroup 
+\def\~{\hss}\titlefont 
+\Line{N~O~W~E~~~~K~O~N~S~T~E~L~A~C~J~E} \par
+\vskip1.5pt
+\subtitlefont
+\baselineskip12pt
+\Line{Przybylski ~  Majkusiak ~ Olczak ~ Pasieczny ~ Krzanowski ~ Szymañski} \par 
+\endgroup
+
+\vss
+\Line{\hss\fig{erko.jpg}\hss}
+\vss
+
+%%% -- w dolnym prawym rogu: --
+%%%% logo studia nagrañ %%%%
+
+\Line{Akademia Muzyczna im.~Stanis³awa Moniuszki w~Gdañsku \hss}
+
+\Line{Katedra Organów, Klawesynu, Akordeonu i~Gitary \hss\subtitlefont  vol.~1}
+\kern1mm
+\endgroup
+
+}
+
+%% %% %%% %% %% %% %% %% %% %% %% Ostatnia strona na sk³adce %% %% %%
+%% *** Strona ostatnia
+\DefCoverPage{2}{%%
+\begingroup \parindent0pt
+%%% Strona zewnêtrzna 2 %%
+\creator{\sc Bronis³aw Kazimierz Przybylski (\ostyle{1941\|--\|2011})%%
+\vadjust{\vbox to 0pt{\kern-1mm%%
+        \line{\hss \pdfimagewidth=33mm\fig{SNAM_logo.pdf}}
+\vss}}
+  }
+
+\composition{{\it Folklore II\/} suita na gitarê i~klawesyn}{(\ostyle{1986})}
+
+\movement{1}{Melodia}{2:03}
+
+\movement{2}{Pie¶ñ pastuszka}{3:45}
+
+\movement{3}{Kozio³ek}{5:11}
+
+
+\creator{Miko³aj Majkusiak (\ostyle{1983} -- )}
+
+\compositionNoParts{4}{{\it Kaprys nr 2\/} na akordeon solo}{(\ostyle{2008})}{5:50}
+
+
+\creator{Krzysztof Olczak (\ostyle{1956} -- )}
+
+\composition{{\it Rz±pielnik czyli szkicownik z Pomorza\/} na akordeon solo}{(\ostyle{1984})}
+
+\movement{5}{Dz\"ek}{3:35}
+
+\movement{6}{Naspik}{5:05}
+
+\composition{{\it Preludium i~fuga\/} na akordeon solo}{(\ostyle{1976--1985})}
+
+\movement{7}{Preludium}{2:30}
+
+\movement{8}{Fuga}{1:28}
+
+\creator{Marek Pasieczny (\ostyle{1980} --~)}
+
+\compositionNoParts{9}{\textit{Homenaje a~Manuel de Falla\/} na gitarê solo}{(\ostyle{2004})}{5:37}
+
+\creator{Andrzej Krzanowski (\ostyle{1951\|--\|1990})}
+
+\compositionNoParts{10}{\textit{Reminiscenza} na akordeon, klarnet, skrzypce i~wiolonczelê}{(\ostyle{1983})}{8:40}
+
+\creator{Pawe³ Szymañski (\ostyle{1954} -- )}
+
+\compositionNoParts{11}{\textit{Cztery tañce heweliañskie\/} na organy i~dwa pozytywy}{(\ostyle{2011})}{12:58}
+
+\medskip
+
+Nagrañ (1--10) dokonano w~Studiu Nagrañ Akademii Muzycznej w~Gdañsku
+
+%% Ten rysunek ma z³y MediaBox st±d kombinowanie poprzez kerny
+\line{\hss \pdfimagewidth=18mm
+        \vbox to\baselineskip{\hsize=0mm \kern-9pt 
+        \hbox{\hss\fig{ddd_logo.pdf}\kern-12pt}}}
+%% DDD %%%
+
+\subheading{Realizacja d¼wiêku/monta¿:} Anna Kasprzycka, Cezary Joczyn i~Marcin Plewiñski
+
+\subheading{Wykonawcy:}
+\performer{Monika D¿u³a-Radkiewicz} -- gitara (\ostyle{1--\ostyle{3}}, \ostyle{9});
+\performer{Ma³gorzata Skotnicka} -- klawesyn (\ostyle{1}--\ostyle{3});
+\performer{El¿bieta Rosiñska} -- akordeon (\ostyle{7}--\ostyle{8}, \ostyle{10});
+\performer{Krzysztof Olczak} -- akordeon (\ostyle{5}--\ostyle{6});
+\performer{Pawe³ Zagañczyk} -- akordeon (\ostyle{4});
+\performer{Roman Perucki} -- organy (\ostyle{11});
+\performer{Hansj\"org Albrecht} -- pozytyw (\ostyle{11});
+\performer{Winfried B\"onig} -- pozytyw (\ostyle{11});
+\performer{Ma³gorzata Skorupa} -- skrzypce (\ostyle{10});
+\performer{Anna Sawicka} -- wiolonczela (\ostyle{10});
+\performer{Grzegorz Wieczorek} -- klarnet (\ostyle{10})
+
+\subheading{Opracowanie graficzne:} Wojciech Mokwiñski
+
+\subheading{Sk³ad:} Tomasz Przechlewski
+
+%% logo DDD dodaæ po lewej w wierszu poni¿ej / albo pod Ann± kasprzyck±
+\par
+ %%
+\vfill 
+ %%
+\begingroup 
+\baselineskip7pt
+\ysmallrm
+ALL RIGHTS OF THE PRODUCER AND OF THE OWNER OF THE RECORDED WORKS RESERVED. \hfill \break
+Unauthorised public performance, broadcasting and copying of  this record prohibited.
+\par
+\endgroup
+\endgroup
+%%logo AM Gdañsk dodaæ na marginesie w prawym gównym rogu %%
+\par
+} %%/#/2
+
+%%
+%% %% %%%% %%%% %%%% %%%% %%%%% %%%% %%% strona 3 (pusta) %%%% %%%% %%%%%%%%%% %%%%%%%
+%% *** Strona na p³ytê (pusta)
+\setbox3\vbox to\vsize{\vfill \baselineskip6pt
+              \pdfimagewidth=30mm 
+               \centerline{\xsmallrm put the CD here}
+               \centerline{\fig{odcisk.jpg}}
+               \centerline{\xsmallrm and press firmly} 
+               \vfill 
+\line{\ysmallrm 
+ \boxrotate{-90}\hbox{OK£ADKÊ Z£O¯ONO KROJEM IWONA (http://jmn.pl/kurier-i-iwona/) W~SYSTEMIE {\TeX}\hss}
+}
+}
+
+%% %% %%%% %%%% %%%% %%%% %%%%% %%%% %%% strona 3 (pusta) %%%% %%%% %%%%%%%%%% %%%%%%%
+%% *** Strona 3-cia (po z³o¿eniu sk³adki)
+\DefCoverPage{4}{%%
+%%\noindent
+\who{Monika D¿u³a-Radkiewicz} -- asystentka w~klasie gitary 
+prof.~Jana Paterka. W~roku 2008 ukoñczy³a z~wyró¿nieniem 
+%Akademiê Muzyczn± w~Gdañsku; 
+AM w~Gdañsku; 
+laureatka konkursów muzycznych w~kraju i~za
+granic±, miêdzy innymi 
+%VI i~VII~Miêdzynarodowego Konkursu Gitarowego w~Olsztynie (2009 -- II miejsce, 2010 -- I miejsce), 
+w~Olszytnie (2009 -- II miejsce, 2010 -- I miejsce),
+%IV~Ogólnopolskiego Konkursu Interpretacji Muzycznej w~Krasiczynie 
+Krasiczynie (III miejsce), 
+%II~Ogólnopolskiego Konkursu Gitarowego w~Lublinie 
+Lublinie (III~miejsce), 
+%XIV Miêdzynarodowego Konkursu Gitarowego w~Kutnej Horze,
+Kutnej Horze w~Czechach (IV miejsce).
+W~ramach programu Erasmus studiowa³a u~Roberta Brightmore'a
+w~Guildhall School of Music and Drama w~Londynie, bra³a tak¿e czynny
+udzia³ w~wielu lekcjach mistrzowskich.
+
+\who{Krzysztof Olczak} -- kompozytor, akordeonista; pedagog 
+%Akademii Muzycznej w~Gdañsku; 
+AM w~Gdañsku; 
+laureat konkursów wykonawczych i~kompozytorskich
+(Auckland, Castelfidardo, Rzeszów); wystêpowa³ jako solista 
+i~kameralista na najwa¿niejszych festiwalach muzyki wspó³czesnej 
+w~Polsce, a~tak¿e w~Austrii, Finlandii, Niemczech, Norwegii, Rosji,
+Szwecji, S³owacji i~we W³oszech; regularnie zapraszany do jury
+konkursów akordeonowych i~kompozytorskich.
+
+\who{Roman Perucki} -- organista tytularny Katedry Oliwskiej, pedagog
+AM w~Gdañsku, dyrektor Polskiej Filharmonii
+Ba³tyckiej im.~F.~Chopina w~Gdañsku. Koncertowa³ na ca³ym
+¶wiecie daj±c ponad 2000 recitali. By³ jurorem konkursów
+organowych we W³oszech, Czechach, Francji i~Rosji. Uhonorowany
+wieloma odznaczeniami i~nagrodami, w~tym 
+\textit{Pro Ecclesiae et Pontifice}, 
+\textit{Zas³u¿ony dla Kultury Polskiej}, 
+\textit{Gloria Artis}, 
+\textit{Pomorska Nagroda Artystyczna},
+\textit{Order ¶w.~Sylwestra}.
+
+\who{El¿bieta Rosiñska} -- akordeonistka, pedagog 
+AM w~Gdañsku. Koncertowa³a jako solistka i~kameralistka w~Polsce, Austrii,
+Finlandii, Niemczech, %S³owacji 
+i~Szwajcarii.  Dokona³a prawykonañ
+utworów K.~Olczaka, M.~Gordiejuka, K.~Naklickiego, P.~S³opeckiego. 
+Jest autork± publikacji po¶wiêconych polskiej literaturze akordeonowej.
+
+\who{Ma³gorzata Skotnicka} -- absolwentka %%Akademii Muzycznej 
+AM w~Krakowie w~klasie klawesynu prof. El¿biety Stefañskiej. Od 1996
+roku jest cz³onkiem zespo³u {\it Pro Musica Antiqua}, z którym
+nagra³a sze¶æ p³yt z~muzyk± baroku oraz polsk±
+muzyk± wspó³czesn±. Prowadzi klasê klawesynu 
+w~AM w~Gdañsku i~ZSM w~Gdañsku\=Wrzeszczu. 
+Z~jej inicjatywy w~2002 roku powsta³o Polskie
+Stowarzyszenie Przyjació³ Muzyki Dawnej. 
+Jest organizatork± sze¶ciu edycji festiwalu Anima Musica.
+%redaktorem rocznika ,,Glosa''. 
+Koncertuje jako solistka 
+i~kameralistka, jest cz³onkiem barokowej orkiestry Silva Rerum.
+ \looseness-1
+
+\who{Pawe³ Zagañczyk} -- asystent w~klasie akordeonu 
+prof.~Krzysztofa Olczaka. W~roku 2009 ukoñczy³ z~wyró¿nieniem
+AM w~Gdañsku. Jest laureatem konkursów
+akordeonowych, miêdzy innymi w~Popradzie, Czechowicach\=Dziedzicach,
+Szczecinie. Koncertuje jako solista z~orkiestrami symfonicznymi 
+i~kameralnymi. 
+%Jest inicjatorem dzia³añ na polu nowej muzyki 
+%--~wspó³pracuje z kompozytorami, organizuje cykliczne koncerty.
+W~2010
+roku zosta³ uhonorowany nagrod± Pomorska Nadzieja Artystyczna.
+
+\who{Hansj\"org Albrecht} -- dyrygent, organista i~klawesynista, szef
+artystyczny Chóru i~Orkiestry im. Bacha w Monachium.
+
+\who{Winfried B\"onig} -- organista katedry w~Kolonii 
+i~profesor klasy organów w~tamtejszej Hochschule f\"ur Musik und Tanz.
+
+\who{Ma³gorzata Skorupa} -- skrzypaczka, pedagog AM w~Gdañsku.
+
+\who{Anna Sawicka} -- wiolonczelistka, koncertmistrz orkiestry Opery Ba³tyckiej w~Gdañsku.
+
+\who{Grzegorz Wieczorek} -- pedagog AM w~Gdañsku, I~klarnecista orkiestry Opery Ba³tyckiej w~Gdañsku.
+
+\vfill } %% /#4/
+
+%%% %%%
+%% %% %%% %% %% %% %% %% %% %% %%  %% %% %% %% %% %%% %% %% %% %% %% %% %% %%  %% %% %%
+%% *** Strona druga (pierwsza od lewej po roz³o¿eniu)
+\DefCoverPage{5}{%%
+\begingroup \condensed
+%%\bigskip \hrule \par \medskip
+%% Strona wewnêtrzna 1 %%
+
+\noindent
+Pomys³ utrwalenia dorobku wykonawczego pracowników Katedry Organów,
+Klawesynu, Akordeonu i~Gitary Akademii Muzycznej im. S.~Moniuszki w~Gdañsku 
+zrodzi³ siê spontanicznie i~stanowi próbê
+zintegrowania konstelacji instrumentów funkcjonuj±cych w~ramach
+katedry. S± ró¿norodne, lecz ³±czy je zarówno solistyczna
+samowystarczalno¶æ jak i~warto¶æ w~zestawieniach kameralnych, czego
+znakomite przyk³ady mo¿na odnale¼æ na p³ycie.
+ \looseness-1
+
+Dominant± programow± tej p³yty s± najnowsze dokonania
+polskich kompozytorów oraz przypadaj±ca w~\ostyle{2011} roku \ostyle{400}. rocznica
+urodzin Jana Heweliusza, wybitnego gdañskiego astronoma. Jubileusz
+ten sta³ siê okazj± do powstania \textit{Czterech tañców heweliañskich\/} --~kompozycji, któr± Polska Filharmonia
+Ba³tycka im.~Fryderyka Chopina w~Gdañsku zamówi³a u~Paw³a
+Szymañskiego na u¶wietnienie rocznicowych obchodów. 
+Na p³ycie
+znalaz³o siê nagranie \textit{live\/} ¶wiatowego prawykonania
+tego utworu na wielkie organy i~dwa pozytywy, które odby³o siê 
+\ostyle{2}~wrze¶nia \ostyle{2011} roku w~sali koncertowej gdañskiej filharmonii. 
+
+Inne prawykonanie zarejestrowane na p³ycie wi±¿e siê 
+z~projektem \textit{Gdañska sztuka interpretacji muzyki akordeonowej 
+XX i~XXI wieku}. Jego inicjator, Pawe³ Zagañczyk, poszerza
+repertuar akordeonowy poprzez zamówienia nowych kompozycji. 
+Jednym z~pierwszych utworów powsta³ych 
+w~ramach projektu jest \textit{Kaprys
+nr~2\/} Miko³aja Majkusiaka. To na wskro¶ wirtuozowskie dzie³o
+zawiera fragment \textit{Alfabetu kaszubskiego}, tradycyjnego zapisu
+s³owno\=muzycznego, rozpoznawalnego elementu folkloru Kaszub.
+
+Wyrazem ³±czno¶ci z~regionaln± tradycj± jest tak¿e
+cykl \textit{Rz±pielnik czyli szkicownik z~Pomorza\/} Krzysztofa
+Olczaka. Kontrastowe miniatury \textit{Dz\"ek\/} oraz \textit{Naspik\/}
+oparte s± na motywach oryginalnych tañców i~pie¶ni. 
+Pe³ne
+postromantycznego rozmachu harmonicznego \textit{Preludium\/} i~utrzymana
+w~¶cis³ych ramach formalnych \textit{Fuga\/} dope³niaj±
+obrazu szerokich mo¿liwo¶ci akordeonu jako instrumentu solowego.
+ \looseness-1
+
+Innego rodzaju stylizacjê muzyki ludowej proponuje Bronis³aw
+Kazimierz Przybylski w~\textit{Folklore~II\/} na gitarê i~klawesyn.
+Wyra¼na archaizacja, kontrasty -- prostota cytatu zestawiona 
+z~szalonymi improwizacjami, dodanie delikatnego brzmienia instrumentów
+perkusyjnych sk³adaj± siê na pe³n± wdziêku ca³o¶æ.
+
+M³ode pokolenie twórców reprezentuje na p³ycie -- obok Majkusiaka
+--komponuj±cy gitarzysta, Marek Pasieczny. \textit{Homenaje 
+a~Manuel de Falla}, nagrodzone na II~Konkursie Kompozytorskim im. 
+T.~Ochlewskiego w~roku \ostyle{2004}, reprezentuje odkrywcze podej¶cie do
+mo¿liwo¶ci wykonawczych gitary oraz silne zwi±zki 
+z~tradycj±, znakiem rozpoznawczym twórczo¶ci Pasiecznego. 
+Wachlarz
+odniesieñ obejmuje muzykê uznanych mistrzów (de Falla, Rodrigo,
+Tansman) jak i~folklor Zamojszczyzny, 
+z~której Pasieczny siê wywodzi.
+
+Andrzej Krzanowski w~\ostyle{2011} roku skoñczy³by \ostyle{60} lat. Nieoczekiwana
+¶mieræ zabra³a przed \ostyle{21}~laty twórcê, który poprzez swoje
+dzie³a zaproponowa³ ca³kowicie odmienne postrzeganie
+akordeonu. Instrumentowi, który w~dotychczasowej literaturze
+koncertowej by³ ¶ci¶niêty gorsetem neostylistyki, kompozytor
+zamaszystym gestem otworzy³ drzwi do ¶wi±tyñ nowej muzyki --
+estrad najwa¿niejszych festiwali muzyki wspó³czesnej
+\textit{Reminiscenza na akordeon, klarnet, skrzypce i~wiolonczelê\/}
+to przenikniêta melancholi±, nieco tajemnicza muzyka, która
+zanika kilkakrotnie w~ciszy, jak wspomnienie, 
+które ulatuje z~naszej pamiêci.
+
+\par \nobreak
+\vskip-8pt
+\line{\hss\xsmallrm El¿bieta Rosiñska}
+
+\endgroup
+\vfill } %%/5/
+
+%%% %%%
+%% %% %%% %% %% %% %% %% %% %% %%  %% %% %% %% %% %%% %% %% %% %% %% %% %% %%  %% %% %%
+%% *** Strona czwarta (pierwsza od prawej po roz³o¿eniu)
+\DefCoverPage{6}{%%
+\begingroup
+\language0 %% english
+\condensed
+%%\heading{New Constellations}
+
+\noindent
+The idea to record the performance output of the staff members from
+Department of~Organ, Harpsichord, Accordion and Guitar of~Stanis³aw
+Moniuszko Academy of Music in Gdañsk occurred spontaneously. It is an
+attempt to integrate the constellation of instruments functioning
+within this Department. They vary, but they have in common their solo
+self-sufficiency, as well as their extraordinary values for chamber
+music. One can find excellent examples of that on this disc.
+ \looseness-1
+
+A~dominant of the disc includes the most recent achievements of Polish
+composers and the \ostyle{400} anniversary of birth of~Johannes Hevelius, noted
+astronomer, marking the year \ostyle{2011}. 
+This jubilee offered the opportunity
+for creation of \textit{Four Hevelian Dances\/}---a~composition by
+Pawe³ Szymañski commissioned by the F.~Chopin Polish Baltic
+Philharmonic in Gdañsk---for adding lustre to the celebration of the
+Year of Johannes Hevelius. The disc contains a~live recording of the
+world premi\'ere for great organ and two positive organs that took place
+on \ostyle{2}~September \ostyle{2011} in the Polish Baltic Philharmonic concert hall.
+ \looseness-1
+
+Another premi\'ere recorded on this disc is related to the project
+{\it Gdañsk Art of 20 and 21-st-century Accordion Music
+Interpretation}. Its originator, Pawe³ Zagañczyk, broadens the
+accordion repertoire through commissioning of new compositions. One of
+the first works created within this project has been \textit{Caprice
+No.~2\/} by Miko³aj Majkusiak. This all-virtuoso work contains 
+a~passage from \textit{Kashubian Alphabet}, a~traditional chant and, at
+the same time, a~recognisable element of the Kashubian folklore.
+
+An impact of the the regional tradition is also evident in the cycle
+\textit{Rz±pielnik or a~Sketchbook from Pomerania\/} 
+by Krzysztof Olczak, noted accordionist and outstanding
+composer associated with the Department. 
+The contrastive short pieces \textit{Dz\"ek\/} and \textit{Naspik\/} are based 
+on the original motifs from
+dances and songs. The \textit{Prelude}, full of post-Romantic harmonic
+momentum, and the \textit{Fugue}, maintained in strict formal frame,
+both complete the picture of great possibilities of accordion as a solo
+instrument.
+
+A~different type of folk music stylization is proposed by Bronis³aw
+Kazimierz Przybylski in \textit{Folklore~II\/} for guitar and
+harpsichord. Distinctive archaisation, contrasts such as simplicity of
+quote juxtaposed with frenetic improvisations, the adding of delicate
+timbre of percussion instruments, 
+all constitute a~graceful whole.
+
+The young generation of creators---along with Majkusiak---is also
+represented on this disc by the composing guitarist Marek Pasieczny.
+{\it Homenaje a Manuel de Falla}, awarded in \ostyle{2}nd T.~Ochlewski
+Composition Competition in \ostyle{2004}, represents an exploratory approach to
+performance possibilities of the guitar as well as strong ties with
+tradition, which became a~hallmark of his music. A~plethora of
+references includes music by recognised masters (de~Falla, Rodrigo,
+Tansman) as well as the folklore of the Zamo¶æ region, where Pasieczny
+comes from.
+
+Andrzej Krzanowski would have been \ostyle{60} years old in \ostyle{2011}. \ostyle{21}~years ago,
+an unexpected death took this creator who, through his works, had
+proposed an completely different perception of the accordion. 
+The
+composer, in an expansive gesture, opened the door to the temple of new
+music---concert halls of the most important festivals of contemporary
+music---before the instrument, whose hitherto concert repertoire has
+been corseted by neo-stylistics. 
+\textit{Reminiscenza for accordion, clarinet, violin and cello\/} is permeated by melancholy, slightly
+mysterious music that several times fades into silence like a memory.
+\par \nobreak
+\vskip-8pt
+\line{\hss\xsmallrm El¿bieta Rosiñska (translated by Grzegorz Hoga)}
+
+\par
+\endgroup \vfill 
+} %%/6/
+
+%% %% %%% %% %% %% %% %% %% %% %%  %% %% %% %% %% %%% %% %% %% %% %% %% %% %%  %% %% %%
+%% *** Grzbiet:
+\DefGrzbiet{\crms NOWE KONSTELACJE: Przybylski -- Majkusiak -- Olczak -- Pasieczny -- Krzanowski -- Szymañski }
+
+%% %% %%% %% %% %% %% %% %% %% %%  %% %% %% %% %% %%% %% %% %% %% %% %% %% %%  %% %% %%
+%% *** Z³o¿enie sk³adki
+\vfill \eject
+\input tp-boxes %% na etapie projektowania potem wy³±czyæ odkomentowuj±c poni¿sze:
+%%\def\boxit#1{#1}
+\MarginSep = -0.4pt
+%%
+\hoffset -1in 
+\voffset -1in 
+\topskip 0pt
+\pdfpagewidth=430mm
+\pdfpageheight=255mm
+\hsize=430mm
+\vsize=255mm %% 250mm
+\def\MarginI{6mm} %% margined pomiêdzy pierwsz±/drug± stron± (od lewej)
+\def\MarginII{8mm} %% %% margined pomiêdzy drug±/trzeci± stron± (od lewej)
+
+\newdimen\CDwidthxxx \CDwidthxxx=138mm %% trochê mniej
+
+\def\boxI#1{\boxit{\vbox to \CDheight{\vss \hbox to\CDwidthxxx{\hss #1\hss}\vss}}}
+\def\boxII#1{\boxit{\vbox to\CDheight{\vss \hbox to\CDwidth{\hss #1\hss}\vss}}}
+
+%% Sk³adka
+\vbox{\offinterlineskip  \nointerlineskip
+%% strony 5, 3, 6 nale¿y obróciæ o 180 stopni
+\boxrevolveright \hbox{\boxrevolveright 
+   \hbox{\boxII{\box5}\kern\MarginII\boxII{\box3}\kern\MarginI\boxI{\box6}}}%
+%%%\hrule
+%%%
+\hbox{%\crms%
+ \boxI{\box4}%
+ %% odleg³o¶ci 7.5mm oraz 4.5 dobieram heurystycznie:
+ \raise7.5mm\hbox to\MarginI{\kern4.5mm \boxrotate{-90}\copy9\hss}%
+ \boxII{\box2}%
+ \raise7.5mm\hbox to\MarginII{\kern4.5mm \boxrotate{-90}\box9 \hss}%
+ \boxII{\box1}%%
+}}
+
+\bye
+% Local Variables:
+% TeX-master: ""
+% mode: tex
+% coding: iso-8859-2
+% ispell-local-dictionary: "polish"
+% LocalWords:  olczak
+% End:
+
